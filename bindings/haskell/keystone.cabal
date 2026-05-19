@@ -2,7 +2,7 @@
 -- documentation, see http://haskell.org/cabal/users-guide/
 
 name:                keystone
-version:             0.1.0.0
+version:             0.1.1.0
 synopsis:            Keystone lightweight multi-platform, multi-architecture assembler framework
 description:         Haskell bindings for the Keystone assembler
 homepage:            https://github.com/keystone-engine/keystone
@@ -11,6 +11,8 @@ author:              Adrian Herrera
 category:            System
 build-type:          Simple
 cabal-version:       >= 1.10
+
+extra-source-files:  src/include/*.h
 
 library
   exposed-modules:     Keystone.Internal.Core
@@ -27,8 +29,7 @@ library
   other-modules:       Keystone.Internal.Util
   build-depends:         base >= 4 && < 5
                        , bytestring >= 0.9.1
-                       , transformers < 0.6
-                       , either >= 4.4
+                       , transformers >= 0.4 && < 0.6
   hs-source-dirs:      src
   c-sources:           src/cbits/keystone_wrapper.c
   include-dirs:        src/include
